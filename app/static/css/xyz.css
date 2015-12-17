@@ -1,0 +1,27 @@
+/**
+Show or hide advertisement images based on size of viewport.
+
+Default Sizes for Twitter Bootstrap’s Media Queries:
+https://scotch.io/quick-tips/default-sizes-for-twitter-bootstraps-media-queries
+**/
+
+@media only screen{
+    /* show 3-1-rectangle for everything that's smaller than Small Devices, Tablets.  */
+    .ad-3-1-rectangle{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width : 767px) {
+    /* Hide ad-square-popup for everything that's smaller than Small Devices, Tablets.  */
+    .ad-square-popup{
+        display: none;
+    }
+
+    /* show 3-1-rectangle for everything that's smaller than Small Devices, Tablets.  */
+    .ad-3-1-rectangle{
+        display: block;
+    }
+}
+

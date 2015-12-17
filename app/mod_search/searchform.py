@@ -1,31 +1,24 @@
 # coding=utf-8
-from wtforms import Form, SelectField, SelectMultipleField
+from wtforms import Form, SelectField, RadioField
 
 class SearchForm(Form):
 
     '''
     def __init__(self, **kwargs):
+        prices = range(100, 1000, 50)
+
         for price in range(100, 1000, 50):
-            self.price_from_rental.choices.append({
+            self.price_from.choices.append({
                 (price, str(price))
             })
 
-            self.price_to_rental.choices.append({
-                (price, str(price))
-            })
-
-
-        for price in range(5000, 300000, 5000):
-            self.price_from_sale.choices.append({
-                (price, str(price))
-            })
-
-            self.price_to_sale.choices.append({
-                (price, str(price))
-            })
+            if price > prices[0]:
+                self.price_to.choices.append({
+                    (price, str(price))
+                })
     '''
 
-    sale_or_rent = SelectField('Me qira / Ne shitje',
+    sale_or_rent = RadioField('Me qira / Ne shitje',
         choices=[
             ('me-qira','Me qira'), # sale
             ('ne-shitje','Ne shitje') # rent
@@ -39,7 +32,7 @@ class SearchForm(Form):
         ],
         default='ferizaj')
 
-    cities = SelectField('Cities',
+    cities = SelectField('City/Village',
         choices=[
             ('all','All'),
             ('ferizaj','Ferizaj'),
@@ -55,11 +48,8 @@ class SearchForm(Form):
         ],
         default='any-type')
 
-    price_from_rental = SelectField('Price from', choices=[('all', 'All')])
-    price_to_rental = SelectField('Price to', choices=[('all', 'All')])
-
-    price_from_sale = SelectField('Price from', choices=[('all', 'All')])
-    price_to_sale = SelectField('Price to', choices=[('all', 'All')])
+    price_from = SelectField('Price from', choices=[(-1, 'All')])
+    price_to = SelectField('to', choices=[(-1, 'All')])
 
     bedrooms = SelectField('Bedrooms',
         choices=[

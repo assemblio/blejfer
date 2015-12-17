@@ -1,17 +1,93 @@
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/switch-field.css') }}">
+{% endblock style %}
+
 {% extends "layout.html" %}
 {% block container %}
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-9">
-            <h1>Kosovo Real Estate</h1>
-            {% for field in form %}
-                {{ field.label }} {{ field }}
-                <br>
-            {% endfor %}
-		</div>
-		<div class="col-md-3">
-            Ads?
-		</div>
-	</div>
+
+<div class="container-fluid container-search">
+    <hr class="style-seven">
+    <div class="row ad-3-1-rectangle" style="padding-bottom:30px;">
+        <div class="col-sm-12">
+            <img src="{{ url_for('static', filename='xyz/saponando/3-1-rectangle-300x100.png') }}" class="img-ad-3-1-rectangle img-responsive center-block">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="switch-field">
+                <!--div class="switch-title">Me qira / Ne shitje</div-->
+                <input id="sale_or_rent-0" name="sale_or_rent" type="radio" value="me-qira">
+                <label for="sale_or_rent-0">Me&nbsp;qira</label>
+                <input checked id="sale_or_rent-1" name="sale_or_rent" type="radio" value="ne-shitje">
+                <label for="sale_or_rent-1">Ne&nbsp;shitje</label>
+            </div>
+        </div>
+    </div>
+    <form>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            {{ form.municipalities.label }}
+                            {{ form.municipalities(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            {{ form.cities.label }}
+                            {{ form.cities(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            {{ form.type.label }}
+                            {{ form.type(class="form-control") }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            {{ form.price_from.label }}
+                            {{ form.price_from(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            {{ form.price_to.label }}
+                            {{ form.price_to(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            {{ form.bedrooms.label }}
+                            {{ form.bedrooms(class="form-control") }}
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            {{ form.bathrooms.label }}
+                            {{ form.bathrooms(class="form-control") }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-right">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 ad-square-popup">
+                <img src="{{ url_for('static', filename='xyz/saponando/square-popup-250x250.png') }}" class="img-ad-square-popup img-responsive">
+            </div>
+        </div>
+    </form>
+    <hr class="style-seven">
+    <div class="row">
+        <div class="col-sm-12 ad-pop-under">
+            <img src="{{ url_for('static', filename='xyz/saponando/pop-under-720x300.png') }}" class="img-ad-pop-under img-responsive center-block">
+        </div>
+    </div>
 </div>
 {% endblock container %}
