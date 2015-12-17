@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block container %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-9">
+            <h1>Kosovo Real Estate</h1>
+            {% for field in form %}
+                {{ field.label }} {{ field }}
+                <br>
+            {% endfor %}
+		</div>
+		<div class="col-md-3">
+            Ads?
+		</div>
+	</div>
+</div>
+{% endblock container %}
