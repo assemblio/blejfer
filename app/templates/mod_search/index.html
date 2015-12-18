@@ -1,22 +1,10 @@
+{% extends "layout.html" %}
+
 {% block style %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/switch-field.css') }}">
 {% endblock style %}
 
-{% extends "layout.html" %}
-{% block container %}
-
-<div class="container-fluid container-search">
-    <div class="row ad-leaderboard">
-        <div class="col-sm-12">
-            <img src="{{ url_for('static', filename='xyz/saponando/leaderboard-728x90.png') }}" class="img-ad-leaderboard img-responsive center-block">
-        </div>
-    </div>
-    <div class="row ad-3-1-rectangle">
-        <div class="col-sm-12">
-            <img src="{{ url_for('static', filename='xyz/saponando/3-1-rectangle-300x100.png') }}" class="img-ad-3-1-rectangle img-responsive center-block">
-        </div>
-    </div>
-
+{% block rows %}
     <hr class="style-seven">
 
     <div class="row">
@@ -86,15 +74,18 @@
                 </div>
             </div>
             <div class="col-sm-3 ad-square-popup">
-                <img src="{{ url_for('static', filename='xyz/saponando/square-popup-250x250.png') }}" class="img-ad-square-popup img-responsive">
+                <a href="http://saponando.al/" target="_blank">
+                    <img src="{{ url_for('static', filename='xyz/saponando/square-popup-250x250.png') }}"  alt="Saponando" class="img-ad-square-popup img-responsive">
+                </a>
             </div>
         </div>
     </form>
     <hr class="style-seven">
     <div class="row">
         <div class="col-sm-12 ad-pop-under">
-            <img src="{{ url_for('static', filename='xyz/saponando/pop-under-720x300.png') }}" class="img-ad-pop-under img-responsive center-block">
+            <a href="http://saponando.al/" target="_blank">
+                <img src="{{ url_for('static', filename='xyz/saponando/pop-under-720x300.png') }}" class="img-ad-pop-under img-responsive center-block">
+            </a>
         </div>
     </div>
-</div>
-{% endblock container %}
+{% endblock rows %}
