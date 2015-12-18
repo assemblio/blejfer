@@ -6,7 +6,12 @@ https://scotch.io/quick-tips/default-sizes-for-twitter-bootstraps-media-queries
 **/
 
 @media only screen{
-    /* show 3-1-rectangle for everything that's smaller than Small Devices, Tablets.  */
+    /* Only show leaderboard for everything that's bigger than Small Devices, Tablets */
+    .ad-leaderboard{
+        display: block;
+    }
+
+    /* Hide 3-1-rectangle for everything that's bigger than Small Devices, Tablets.  */
     .ad-3-1-rectangle{
         display: none;
     }
@@ -14,12 +19,17 @@ https://scotch.io/quick-tips/default-sizes-for-twitter-bootstraps-media-queries
 
 
 @media only screen and (max-width : 767px) {
-    /* Hide ad-square-popup for everything that's smaller than Small Devices, Tablets.  */
+    /* Hide leaderboard for everything that's as mall or smaller than than Small Devices, Tablets */
+    .ad-leaderboard{
+        display: none;
+    }
+
+    /* Hide ad-square-popup for everything that's as small or smaller than Small Devices, Tablets.  */
     .ad-square-popup{
         display: none;
     }
 
-    /* show 3-1-rectangle for everything that's smaller than Small Devices, Tablets.  */
+    /* Show 3-1-rectangle for everything that's  as small or smaller than Small Devices, Tablets.  */
     .ad-3-1-rectangle{
         display: block;
     }

@@ -6,12 +6,19 @@
 {% block container %}
 
 <div class="container-fluid container-search">
-    <hr class="style-seven">
-    <div class="row ad-3-1-rectangle" style="padding-bottom:30px;">
+    <div class="row ad-leaderboard">
+        <div class="col-sm-12">
+            <img src="{{ url_for('static', filename='xyz/saponando/leaderboard-728x90.png') }}" class="img-ad-leaderboard img-responsive center-block">
+        </div>
+    </div>
+    <div class="row ad-3-1-rectangle">
         <div class="col-sm-12">
             <img src="{{ url_for('static', filename='xyz/saponando/3-1-rectangle-300x100.png') }}" class="img-ad-3-1-rectangle img-responsive center-block">
         </div>
     </div>
+
+    <hr class="style-seven">
+
     <div class="row">
         <div class="col-sm-12">
             <div class="switch-field">
