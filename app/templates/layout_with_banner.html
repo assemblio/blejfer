@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{%  block banner %}
+    <div class="row ad-leaderboard">
+        <div class="col-sm-12">
+            <a href="http://saponando.al/" target="_blank">
+                <img src="{{ url_for('static', filename='xyz/' + ad_campaign +  '/leaderboard-728x90.png') }}"  alt="Saponando" class="img-ad-leaderboard img-responsive center-block">
+            </a>
+        </div>
+    </div>
+    <div class="row ad-3-1-rectangle">
+        <div class="col-sm-12">
+            <a href="http://saponando.al/" target="_blank">
+                <img src="{{ url_for('static', filename='xyz/' + ad_campaign +  '/3-1-rectangle-300x100.png') }}"  alt="Saponando" class="img-ad-3-1-rectangle img-responsive center-block">
+            </a>
+        </div>
+    </div>
+{%  endblock banner %}

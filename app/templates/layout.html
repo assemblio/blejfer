@@ -56,21 +56,11 @@
         </nav>
 
         <div class="container-fluid">
-            <div class="row ad-leaderboard">
-                <div class="col-sm-12">
-                    <a href="http://saponando.al/" target="_blank">
-                        <img src="{{ url_for('static', filename='xyz/saponando/leaderboard-728x90.png') }}"  alt="Saponando" class="img-ad-leaderboard img-responsive center-block">
-                    </a>
-                </div>
-            </div>
-            <div class="row ad-3-1-rectangle">
-                <div class="col-sm-12">
-                    <a href="http://saponando.al/" target="_blank">
-                        <img src="{{ url_for('static', filename='xyz/saponando/3-1-rectangle-300x100.png') }}"  alt="Saponando" class="img-ad-3-1-rectangle img-responsive center-block">
-                    </a>
-                </div>
-            </div>
+            {% block banner %}
+            {% endblock %}
+        </div>
 
+        <div class="container-fluid">
             {% block rows %}
             {% endblock %}
         </div>

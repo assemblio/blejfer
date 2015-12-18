@@ -1,7 +1,7 @@
 # coding=utf-8
 from wtforms import Form, SelectField, RadioField
 
-class SearchForm(Form):
+class RealEstateBasicForm(Form):
 
     '''
     def __init__(self, **kwargs):
@@ -44,33 +44,44 @@ class SearchForm(Form):
         choices=[
             ('any-type','Any type'),
             ('apartment','Apartment'),
-            ('house','House')
+            ('house','House'),
+            ('office','Office'),
         ],
         default='any-type')
 
-    price_from = SelectField('Price from', choices=[(-1, 'All')])
-    price_to = SelectField('to', choices=[(-1, 'All')])
+    price_from = SelectField('Price from', choices=[('-1', 'All')])
+    price_to = SelectField('to', choices=[('-1', 'All')])
 
-    bedrooms = SelectField('Bedrooms',
+    floors = SelectField('Kateve',
         choices=[
-            ('any-beds','Any beds'), # Any bedroom
-            ('studio','Studio'), # Studio
-            ('1-bedroom','1 Bedroom'), # 1 bedroom
-            ('2-bedroom','2 Bedroom'), # 2 bedroom
-            ('3-bedroom','3 Bedroom'), # 3 bedroom
-            ('4-bedroom','4 Bedroom'), # 4 bedroom
-            ('5-bedroom','5+ Bedroom') # 5 bedroom
+            ('-1','Any floor'),
+            ('1','1 Kateve'),
+            ('1','2 Kateve'),
+            ('3','1 Kateve'),
+            ('4','3 Kateve'),
+            ('5','4 Kateve'),
         ],
-        default='any-type')
+        default='-1')
 
-    bathrooms = SelectField('Bathrooms',
+    rooms = SelectField('Dhomave',
         choices=[
-            ('any-baths','Any baths'),
-            ('1-bathroom','1 Bathroom'), # 1 bedroom
-            ('2-bathroom','2 Bathroom'), # 2 bedroom
-            ('3-bathroom','3 Bathroom'), # 3 bedroom
-            ('4-bathroom','4 Bathroom'), # 4 bathroom
+            ('-1','Any rooms'), # Any room
+            ('1','1 Dhomave'),
+            ('3','3 Dhomave'),
+            ('4','4 Dhomave'),
+            ('5','5 Dhomave'),
+            ('6','6 Dhomave'),
+            ('7','7 Dhomave'),
+            ('8','8+ Dhomave'),
         ],
-        default='any-baths')
+        default='-1')
 
-    #range(start, stop, step)
+    bathrooms = SelectField('Banjo',
+        choices=[
+            ('-1','Any baths'),
+            ('1','1 Banjo'),
+            ('2','2 Banjo'),
+            ('3','3 Banjo'),
+            ('4','4 Banjo'),
+        ],
+        default='-1')

@@ -2,7 +2,9 @@ import argparse
 
 from flask import render_template
 from app import create_app
+
 import sys
+
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
